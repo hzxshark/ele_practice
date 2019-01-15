@@ -1,0 +1,51 @@
+数据库的名称:eleme
+1.管理者信息集合  adminInfoList  //密码同意6个8
+    adminName：管理者名称
+    adminId：唯一id，
+    passWord：登录密码
+2.管理者登录日志集合  adminLoginLogList
+    adminId：唯一id，
+    adminName：管理者名称
+    loginTime：登录时间
+3.店铺类型管理  shopTypeList
+    shopTypeName
+    shopTypeId
+    shopTypePic
+    addTime
+    upTime
+
+3.1店铺管理 shopList
+    shopTypeName
+    shopTypeId
+    shopPic
+    shopName
+    shopId
+    addTime
+    upTime
+
+4.管理者信息列表 adminInfoList和1相同
+
+
+5.商品列表shopList
+    shopName
+    shopID
+    shopTypeid
+
+6.商品类别信息表：goodsTypeList
+    1、_id:唯一标识
+    2、goodsTypeName:商品类别名称
+    3、shopId:店铺ID
+    4、shopName:店铺的名字
+    5、addTime:添加的时间
+7.商品信息表：goodsList
+    1、_id:唯一标识
+    2、goodsTypeId:商品类别ID
+    3、goodsTypeName:商品类别名称
+    4、shopId;店铺的ID
+    5、goodsName:商品的名称
+    6、goodsPrice:商品的价格
+    7、goodsPic:商品的图片
+    8、goodsDes:商品的描述
+    9、isHot:是否热销
+    10、isSale:是否优惠
+    11、addTime:添加时间
