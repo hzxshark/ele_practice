@@ -3,7 +3,6 @@ const help=require("../module/help")
 const db=require("../module/db")
 
 module.exports.login=function(req,res){
-    console.log(req.body,11111);
     db.findOne("adminInfoList",{
         adminName:req.body.adminName,
         passWord:md5(req.body.passWord+"ele@888")
