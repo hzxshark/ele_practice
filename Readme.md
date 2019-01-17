@@ -1,5 +1,12 @@
 
-####安装mongodb
+##项目说明
+
+> 练习用饿了么后台管理系统及部分展示页面；
+
+##启用步骤
+
+``` bash
+##安装mongodb
 
 #如果之前没有安装过mongodb数据库的，请先安装数据库然后运行数据库并挂起；
     https://www.jianshu.com/p/4bda3b7a9ea6
@@ -12,9 +19,11 @@
     use eleme     
 #设置初始的超级管理员密码与账户(超级管理员账户：greentea;密码： 888888)
     db.adminInfoList.insert({adminName:'greentea',passWord:'e99acb14791098e5fb5b5f8dd025b68e',addTime:1547733609361})
+    
+#友情链接（mongodb基本操作）
+    https://note.youdao.com/ynoteshare1/index.html?id=86bd900218b3aa2d1d7b47775a980d94&type=note#/
 
-
-####启动node服务
+##启动node服务
 
 #进入到api文件夹下安装依赖；
     cnpm i 或者 npm i
@@ -22,7 +31,7 @@
     node s1.js   如果时mac用户  sudo node s1.js
 
 
-####启动后台管理系统
+##启动后台管理系统
 
 #进入到manage文件夹下装依赖
     cnpm i
@@ -30,5 +39,5 @@
     npm run dev
     
 
-####启动前端站点页面
+##启动前端站点页面
     同上

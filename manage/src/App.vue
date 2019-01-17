@@ -117,8 +117,8 @@
         text-align:left;
     }
     .el-header, .el-footer {
-        background-color: #B3C0D1;
-        color: #333;
+        background-color: #409EFF ;
+        color: #fff;
         text-align: center;
         height:60px;
         line-height: 60px;

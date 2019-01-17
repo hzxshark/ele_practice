@@ -2,7 +2,7 @@
   <div class="hello">
    <h1>欢迎来到饿了么后台管理系统</h1>
       <!--<child :name="msg"  @update:fn="v=>msg=v"></child>-->
-      <child :msg="msg"  :msg.sync="msg"></child>
+      <child :msg="msg"  :msg.sync="msg" ></child>
       <!--<child :name="msg"  @fn="change"></child>-->
 
 

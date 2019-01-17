@@ -75,5 +75,7 @@
 </script>
 
 <style >
-
+.el-table th>.cell{
+    text-align: left;
+}
 </style>
