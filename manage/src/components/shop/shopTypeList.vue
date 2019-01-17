@@ -40,7 +40,7 @@
                 <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="primary" icon="el-icon-edit" circle size="small"></el-button>
                     <el-button @click="handleDelete(scope.row)" type="danger" icon="el-icon-delete" circle size="small"></el-button>
-                    <el-button type="primary" @click="handleAddShop(scope.row)"size="small">添加店铺</el-button>
+                    <el-button type="primary" @click="handleAddShop(scope.row)" size="small">添加店铺</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -66,6 +66,7 @@
         },
         methods:{
             handleAddShop(row){
+                // console.log(11111,row)
                 this.shopVisible=true
                 this.row=row
             },

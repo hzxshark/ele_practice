@@ -126,4 +126,7 @@
     img{
         height:80px;
     }
+    .el-table th>.cell{
+    text-align: left;
+    }
 </style>

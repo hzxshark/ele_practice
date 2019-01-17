@@ -171,4 +171,7 @@
     img{
         height:70px;
     }
+    .el-table th>.cell{
+    text-align: left;
+    }
 </style>
