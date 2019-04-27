@@ -11,26 +11,34 @@
         <el-table
             :data="$store.state.admin.adminInfoList"
             stripe
-
             style="width: 100%">
             <el-table-column  type="index" label="#"></el-table-column>
-
             <el-table-column
                 prop="adminName"
                 label="管理者名称"
-                width="240">
+                width="140">
             </el-table-column>
             <el-table-column
                 prop="_id"
                 label="编号"
-                width="300">
+                width="230">
             </el-table-column>
-            <el-table-column label="添加时间"  width="360">
+            <el-table-column label="添加时间"  width="240">
             <div slot-scope="scope">
                 {{scope.row.addTime | date}}
             </div>
             </el-table-column>
-            <el-table-column label="管理">
+            <el-table-column label="最后登陆时间"  width="240">
+            <div slot-scope="scope">
+                {{scope.row.addTime | date}}
+            </div>
+            </el-table-column>
+            <el-table-column
+                prop="cpl"
+                label="CPL(当前权限点)"
+                width="180">
+            </el-table-column>
+            <el-table-column label="管理" width = '120'>
                 <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="primary" icon="el-icon-edit" circle size="small"></el-button>
                     <el-button @click="handleDelete(scope.row)" type="danger" icon="el-icon-delete" circle size="small"></el-button>
@@ -44,8 +52,19 @@
                 <el-form-item label="管理者账户名" >
                     <el-input v-model="adminForm.adminName" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item label="密码" >
+                <el-form-item label="初始密码" >
                     <el-input v-model="adminForm.passWord" auto-complete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="CPL" >
+                    <el-select v-model="value" placeholder="请选择">
+                        <el-option
+                        v-for="item in cplList"
+                        :key="item"
+                        :label="item"
+                        :value="item"
+                        :disabled="item===1">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -66,7 +85,8 @@
                 adminForm:{
                     adminName:"",
                     passWord:""
-                }
+                },
+                cplList:[1,2,3,4,5]
             }
         },
         methods:{
@@ -82,12 +102,14 @@
             addAdminInfo(){
                 this.$ajax.post("/addAdminInfo",{
                     adminName:this.adminForm.adminName,
-                    passWord:this.adminForm.passWord
+                    passWord:this.adminForm.passWord,
+                    // cpl:this.cpl,
                 }).then((data)=>{
                     if(data.ok==1){
                         this.dialogFormVisible=false
                         this.adminForm.adminName=""
                         this.adminForm.passWord=""
+                        // this.adminForm.cpl=""
                         this.$store.dispatch("getAdminInfoList",this.$store.state.page.pageIndex)
                         this.$message({
                             message: '添加管理员信息成功！',

@@ -39,7 +39,7 @@
             </div>
             <div>
                 <mt-cell title="我的客服" icon="more" is-link></mt-cell>
-                <mt-cell title="下载饿了么APP" icon="more" is-link></mt-cell>
+                <mt-cell title="下载XXXAPP" icon="more" is-link></mt-cell>
             </div>
         </section>
         <FootNav></FootNav>
@@ -133,7 +133,7 @@
         line-height:0.3rem;
     }
     .mint-cell{
-        ;text-align:left
+        text-align:left;
     }
     section div:nth-of-type(2),section div:nth-of-type(3){
         margin-top:0.15rem;
