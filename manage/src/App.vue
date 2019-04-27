@@ -2,7 +2,7 @@
     <div id="app">
         <el-container>
             <el-header>
-                <el-col :span="12" class="logo" @click.native="$router.push('/')"><strong >饿了么后台管理系统</strong></el-col>
+                <el-col :span="12" class="logo" @click.native="$router.push('/')"><strong >外卖类电商后台管理系统</strong></el-col>
                 <el-col :span="12" class="admin">欢迎您
                     <el-dropdown>
                           <span class="el-dropdown-link">
@@ -10,6 +10,7 @@
                           </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>修改密码</el-dropdown-item>
+                            <el-dropdown-item>我的待办</el-dropdown-item>
                             <el-dropdown-item @click.native="exit">退出</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
@@ -22,7 +23,7 @@
                         class="el-menu-vertical-demo"
                         @open="handleOpen"
                         @close="handleClose">
-                        <el-menu-item index="5" @click.native="$router.push('/')">
+                        <el-menu-item index="0" @click.native="$router.push('/')">
                             <i class="el-icon-setting" ></i>
                             <span  >首页</span>
                         </el-menu-item>
@@ -55,17 +56,12 @@
                                 <i class="el-icon-setting"></i>
                                 <span>用户信息</span>
                             </template>
-                            <el-menu-item index="4-1" @click.native="$router.push('/shopTypeList')">用户管理</el-menu-item>
-                            <el-menu-item index="4-2" @click.native="$router.push('/AdminInfo')">哈哈哈</el-menu-item>
+                            <el-menu-item index="4-1" @click.native="$router.push('/')">用户总览</el-menu-item>
+                            <el-menu-item index="4-2" @click.native="$router.push('/')">用户管理</el-menu-item>
                         </el-submenu>
-
                         <el-menu-item index="5" >
                             <i class="el-icon-document"></i>
-                            <span slot="title">导航三</span>
-                        </el-menu-item>
-                        <el-menu-item index="6">
-                            <i class="el-icon-setting"></i>
-                            <span slot="title">导航四</span>
+                            <span slot="title">订单管理</span>
                         </el-menu-item>
                     </el-menu>
                 </el-aside>

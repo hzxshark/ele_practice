@@ -1,6 +1,6 @@
 <template>
 <el-form label-width="100px" class="demo-ruleForm" :model="loginForm" :rules="rules" ref="valiLoginForm">
-    <h3>欢迎登录饿了么后台管理系统</h3>
+    <h3>欢迎登录XXX后台管理系统</h3>
     <br>
     <el-form-item label="用户名" prop="adminName">
         <el-input type="text" v-model="loginForm.adminName"></el-input>
@@ -37,9 +37,8 @@
         },
         methods:{
             loginFn(formName){
-                this.$refs[formName].validate((valid) => {//固定语法，目的是验证表单是否允许提交
+                this.$refs[formName].validate((valid) => {
                     if(valid){
-                        //这里是表单验证成功，可以提交表单，调用ajax
                         this.$ajax.post("/login",{
                             adminName:this.loginForm.adminName,
                             passWord:this.loginForm.passWord
@@ -53,7 +52,7 @@
                             }
                         })
                     }else{
-                        alert("no ok")
+                        alert("输入的用户名或密码不正确")
                     }
                 })
             }

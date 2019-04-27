@@ -1,31 +1,33 @@
 <template>
   <div class="hello">
-   <h1>欢迎来到饿了么后台管理系统</h1>
+   <h1>欢迎来到XXX后台管理系统</h1>
       <!--<child :name="msg"  @update:fn="v=>msg=v"></child>-->
-      <child :msg="msg"  :msg.sync="msg" ></child>
+      <!-- <child :msg="msg"  :msg.sync="msg" ></child> -->
       <!--<child :name="msg"  @fn="change"></child>-->
-
-
+      <p>管理员： {{admin.adminInfo.adminName}}</p> 
+      <p>CPL： 1</p> 
+      <p>待处理工单数量： <el-link type="primary">0</el-link></p> 
   </div>
 </template>
 
 <script>
-
-    import child from "@/components/child"
+import {mapState,mapGetters,mapActions,mapMutations} from "vuex"
+import child from "@/components/child"
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
-    }
-  },
+      }
+    },
+   computed:{
+        ...mapState(["admin"]),
+        child
+    },
     methods:{
       change(v){
           this.msg=v
       }
-    },
-    components:{
-      child
     }
 }
 </script>

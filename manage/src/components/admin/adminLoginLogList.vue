@@ -6,25 +6,33 @@
         v-loading="$store.state.loading"
         style="width: 100%">
         <el-table-column  type="index" label="#"></el-table-column>
-
-        <el-table-column label="登陆时间"  width="300">
+        <el-table-column
+            prop="adminName"
+            label="管理者账户"
+            width="160">
+        </el-table-column>
+        <el-table-column
+            prop="_id"
+            label="登陆唯一标识"
+            width= '230'>
+        </el-table-column>
+         <el-table-column label="登陆时间"  width="300">
             <div slot-scope="scope">
                 {{scope.row.loginTime | date}}
             </div>
         </el-table-column>
-        <el-table-column
-            prop="adminName"
-            label="管理者账户"
-            width="200">
+         <el-table-column
+            prop="ip"
+            label="登陆IP地址">
         </el-table-column>
-        <el-table-column
-            prop="_id"
-            label="流水号">
+         <el-table-column
+            prop="address"
+            label="登陆地址">
         </el-table-column>
         <el-table-column
             label="操作">
             <template slot-scope="scope">
-             <el-button @click="handleClick(scope.row)" type="primary" icon="el-icon-edit" circle size="small"></el-button>
+             <!-- <el-button @click="handleClick(scope.row)" type="primary" icon="el-icon-edit" circle size="small"></el-button> -->
              <el-button @click="handleDelete(scope.row)" type="danger" icon="el-icon-delete" circle size="small"></el-button>
             </template>
         </el-table-column>
@@ -42,7 +50,7 @@
         },
         methods:{
             handleDelete(row) {
-                this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                this.$confirm('此操作将删除此条登陆信息, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
