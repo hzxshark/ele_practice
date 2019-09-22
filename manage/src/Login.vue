@@ -1,4 +1,5 @@
 <template>
+<div>
 <el-form label-width="100px" class="demo-ruleForm" :model="loginForm" :rules="rules" ref="valiLoginForm">
     <h3>欢迎登录XXX后台管理系统</h3>
     <br>
@@ -12,6 +13,8 @@
         <el-button type="primary" @click="loginFn('valiLoginForm')">登录</el-button>
     </el-form-item>
 </el-form>
+<remote-js src="http://pv.sohu.com/cityjson?ie=utf-8"></remote-js>
+</div>
 </template>
 
 <script>
@@ -37,11 +40,15 @@
         },
         methods:{
             loginFn(formName){
+                var ip = returnCitySN["cip"];
+                var cname = returnCitySN["cname"];
                 this.$refs[formName].validate((valid) => {
                     if(valid){
                         this.$ajax.post("/login",{
                             adminName:this.loginForm.adminName,
-                            passWord:this.loginForm.passWord
+                            passWord:this.loginForm.passWord,
+                            ip,
+                            cname,
                         }).then((data)=>{
                             if(data.ok==1){//login success -> set localStorage
                                 localStorage.adminName=data.adminName;
@@ -55,18 +62,32 @@
                         alert("输入的用户名或密码不正确")
                     }
                 })
-            }
-        }
+            },
+        },
+        components:{
+            'remote-js': {
+                render(createElement) {
+                    return createElement('script', { attrs: { type: 'text/javascript', src: this.src }});
+                },
+                props: {
+                    src: { type: String, required: true },
+                },
+            },
+        },
     }
 </script>
 
 <style scoped>
     .demo-ruleForm{
-        border-radius: 10px;
+        border-radius: 4px;
         padding:0 50px 0 0;
         text-align:center;
         border:1px solid dodgerblue;
         width:500px;
-        margin:30px auto;
+        margin:100px auto;
+    }
+    .demo-ruleForm h3 {
+        text-align: center;
+        margin-top: 20px;
     }
 </style>
