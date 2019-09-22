@@ -56,7 +56,7 @@
                     <el-input v-model="adminForm.passWord" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="CPL" >
-                    <el-select v-model="value" placeholder="请选择">
+                    <el-select v-model="cplList" placeholder="请选择">
                         <el-option
                         v-for="item in cplList"
                         :key="item"

@@ -20,7 +20,6 @@ export default {
             state.adminLoginLogList=data.adminLoginLogList
         },
         changeAdminInfo(state,data){
-            console.log(data.adminInfoList)
             state.adminInfoList=data.adminInfoList
         }
     },

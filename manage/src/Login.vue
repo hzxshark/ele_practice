@@ -13,7 +13,7 @@
         <el-button type="primary" @click="loginFn('valiLoginForm')">登录</el-button>
     </el-form-item>
 </el-form>
-<remote-js src="http://pv.sohu.com/cityjson?ie=utf-8"></remote-js>
+<!-- <remote-js src="http://pv.sohu.com/cityjson?ie=utf-8"></remote-js> -->
 </div>
 </template>
 
@@ -40,15 +40,15 @@
         },
         methods:{
             loginFn(formName){
-                var ip = returnCitySN["cip"];
-                var cname = returnCitySN["cname"];
+                // var ip = returnCitySN["cip"];
+                // var cname = returnCitySN["cname"];
                 this.$refs[formName].validate((valid) => {
                     if(valid){
                         this.$ajax.post("/login",{
                             adminName:this.loginForm.adminName,
                             passWord:this.loginForm.passWord,
-                            ip,
-                            cname,
+                            // ip,
+                            // cname,
                         }).then((data)=>{
                             if(data.ok==1){//login success -> set localStorage
                                 localStorage.adminName=data.adminName;
@@ -64,16 +64,16 @@
                 })
             },
         },
-        components:{
-            'remote-js': {
-                render(createElement) {
-                    return createElement('script', { attrs: { type: 'text/javascript', src: this.src }});
-                },
-                props: {
-                    src: { type: String, required: true },
-                },
-            },
-        },
+        // components:{
+        //     'remote-js': {
+        //         render(createElement) {
+        //             return createElement('script', { attrs: { type: 'text/javascript', src: this.src }});
+        //         },
+        //         props: {
+        //             src: { type: String, required: true },
+        //         },
+        //     },
+        // },
     }
 </script>
 
