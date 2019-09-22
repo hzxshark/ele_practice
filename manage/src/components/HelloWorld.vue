@@ -4,7 +4,7 @@
       <!--<child :name="msg"  @update:fn="v=>msg=v"></child>-->
       <!-- <child :msg="msg"  :msg.sync="msg" ></child> -->
       <!--<child :name="msg"  @fn="change"></child>-->
-      <p>管理员： {{admin.adminInfo.adminName}}</p> 
+      <p>管理员： {{admin.adminName}}</p> 
       <p>CPL： 1</p> 
       <p>待处理工单数量： <el-link type="primary">0</el-link></p> 
   </div>

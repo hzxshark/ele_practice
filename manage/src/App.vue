@@ -2,11 +2,12 @@
     <div id="app">
         <el-container>
             <el-header>
-                <el-col :span="12" class="logo" @click.native="$router.push('/')"><strong >外卖类电商后台管理系统</strong></el-col>
+                <el-col :span="12" class="logo" @click.native="$router.push('/')"><strong >XXXXXXXX后台管理系统</strong></el-col>
                 <el-col :span="12" class="admin">欢迎您
                     <el-dropdown>
                           <span class="el-dropdown-link">
-                            {{admin.adminInfo.adminName}} <img src="@/assets/pig1.jpg"><i class="el-icon-arrow-down el-icon--right"></i>
+                              <!-- {{admin}} -->
+                            {{admin.adminName}} <img src="@/assets/pig1.jpg"><i class="el-icon-arrow-down el-icon--right"></i>
                           </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>修改密码</el-dropdown-item>

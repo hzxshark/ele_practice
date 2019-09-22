@@ -6,17 +6,15 @@ export default {
     state:{
         adminInfoList:[],
         adminLoginLogList:[],
-        adminInfo:{
-            adminName:localStorage.adminName,
-            adminId:localStorage.adminId,
-        }
+        adminName:localStorage.adminName,
+        adminId:localStorage.adminId,
     },
     mutations:{
         exit(state){
             localStorage.removeItem('adminName')
             localStorage.removeItem('adminId')
-            state.adminName=""
-            state.adminId=""
+            // state.adminName=""
+            // state.adminId=""
         },
         changeLogList(state,data){
             state.adminLoginLogList=data.adminLoginLogList

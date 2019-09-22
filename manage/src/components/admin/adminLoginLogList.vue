@@ -26,7 +26,7 @@
             label="登陆IP地址">
         </el-table-column>
          <el-table-column
-            prop="address"
+            prop="cname"
             label="登陆地址">
         </el-table-column>
         <el-table-column
@@ -53,7 +53,7 @@
                 this.$confirm('此操作将删除此条登陆信息, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
-                    type: 'warning'
+                    type: 'warning',
                 }).then(() => {
                     //这里表示可以删除，然后进行ajax调用
                     this.$ajax.get("/delAdminLoginInfo",{
